@@ -1,0 +1,38 @@
+{
+  "name": "agr-logger",
+  "description": "A logging utility for displaying messages from javascript code to an output source (i.e. the console, a file, etc.)",
+  "version": "0.1.0",
+  "homepage": "https://github.com/agramirez/agr-logger",
+  "author": {
+    "name": "Alexander G. Ramirez",
+    "email": "agramirez2001@gmail.com",
+    "url": "http://agramirez.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/agramirez/agr-logger"
+  },
+  "bugs": {
+    "url": "https://github.com/agramirez/agr-logger/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/agramirez/agr-logger/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/agr-logger",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt nodeunit"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt": "~0.4.4"
+  },
+  "keywords": []
+}
