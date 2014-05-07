@@ -1,36 +1,23 @@
+/**
+  Tests for the the agr-logger constructor primary functionality.  
+*/
 'use strict';
 
-var agr_logger = require('../lib/agr-logger.js');
+var Logger = require('../lib/agr-logger.js');
 
-/*
-  ======== A Handy Little Nodeunit Reference ========
-  https://github.com/caolan/nodeunit
-
-  Test methods:
-    test.expect(numAssertions)
-    test.done()
-  Test assertions:
-    test.ok(value, [message])
-    test.equal(actual, expected, [message])
-    test.notEqual(actual, expected, [message])
-    test.deepEqual(actual, expected, [message])
-    test.notDeepEqual(actual, expected, [message])
-    test.strictEqual(actual, expected, [message])
-    test.notStrictEqual(actual, expected, [message])
-    test.throws(block, [error], [message])
-    test.doesNotThrow(block, [error], [message])
-    test.ifError(value)
-*/
-
-exports['awesome'] = {
+exports.constructor = {
   setUp: function(done) {
-    // setup here
     done();
   },
   'no args': function(test) {
+    var data, actual, expeted;
+
+    data = null;
+    actual = 'object';
+    expected = typeof new Logger();
+
     test.expect(1);
-    // tests here
-    test.equal(agr_logger.awesome(), 'awesome', 'should be awesome.');
+    test.equal(actual, expected, 'should work without any problems');
     test.done();
-  },
+  }
 };
