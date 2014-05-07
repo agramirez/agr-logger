@@ -36,6 +36,6 @@
   },
   "keywords": [],
   "dependencies": {
-    "agr-util": "^1.0.0"
+    "agr-util": "^1.1.0"
   }
 }
