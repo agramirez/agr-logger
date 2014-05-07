@@ -11,14 +11,22 @@ Install the module with: `npm install agr-logger` -not available yet-
 var Logger = require('agr-logger');
 var fs = require('fs');
 var log = Logger({
-  on: true, 
   module: 'myMod',
-  output: function (msg, ops) {
-    ops.fs.appendFile(ops.fileName, msg);
+  output: {
+    on: true,
+    method: function (msg, options) {
+      options.fs.appendFile(options.fileName, msg);
+    },
+    options: {
+      fs: fs,
+      fileName: 'myFile.log'
+    }
   },
-  ops: {
-    fs: fs,
-    fileName: 'myFile.log'
+  format: {
+    depth: 1,
+    theme: {log: 'grey', val: 'grey', err: 'red'},
+    tabs: {count: 1, size: 2, symbol: ' '},
+    timeStamp: function (date) { return date.toString(); }
   }
 });
 
