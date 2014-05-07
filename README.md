@@ -5,71 +5,92 @@ A logging utility for displaying messages from javascript code to an output sour
 The agr-logger's main job is to produce nicely formatted output that carries relevant information.
 
 ## Getting Started
-Install the module with: `npm install agr-logger` -not available yet-
+Install the module with: `npm install agr-logger`
 
 ```javascript
 var Logger = require('agr-logger');
 var fs = require('fs');
-var log = Logger({
-  module: 'myMod',
-  output: {
-    on: true,
-    method: function (msg, options) {
-      options.fs.appendFile(options.fileName, msg);
-    },
-    options: {
-      fs: fs,
-      fileName: 'myFile.log'
-    }
-  },
-  format: {
-    depth: 1,
-    theme: {log: 'grey', val: 'grey', err: 'red'},
-    tabs: {count: 1, size: 2, symbol: ' '},
-    timeStamp: function (date) { return date.toString(); }
-  }
-});
+var log = Logger();
 
+// turn logging on
+log.on();
 
 // displays a message to the output file
 // output: myMod [1/1/14 12:00:00 AM] :::MSG::: some message
 log.msg('some message');
 
 // displays a message to the output file
-// output: myMod [1/1/14 12:00:00 AM] :::LOG::: some message
+// output: [1/1/14 12:00:00 AM] some message
 log.log('some message');
 
 // displays a message to the output file
 // output: myMod [1/1/14 12:00:00 AM] :::ERR::: some message
 log.err('some message');
-
-function divide(a,b) {
-  // log function start
-  log.start(this);
-  var result;
-
-  try {
-    // log multiple values at once
-    log.val({a:a,b:b});
-
-    result = a / b;
-  } catch(ex) {
-    // log an exception
-    log.err(ex);
-  }
-
-  // log a single value
-  log.val('result', result);
-
-  // log the end of the function
-  log.end(this);
-}
-
-divide(2,4);
-divide(2,0);
 ```
 
 ## Documentation
+
+### Terms and Definitions
+
+|Term|Definition|See Also|
+--------------------------
+|output method| the primary function called when we log something.  defined in options.output.method|input parameters|
+|log method| one of the logging methods callable from our instantiated logger class.|agr-logger.log, agr-logger.msg, agr-logger.func, agr-logger.start, agr-logger.end, agr-logger.val|
+
+### Public Methods
+
+#### agr-logger.on()
+
+#### agr-logger.off()
+
+#### agr-logger.module(ops)
+
+#### agr-logger.format(ops)
+
+#### agr-logger.environment(ops)
+
+#### agr-logger.log(str)
+
+#### agr-logger.msg(str) 
+
+Displays the message o
+
+#### agr-logger.val(data)
+
+Displays value data using the NAME = VALUE format.  The data can be an object
+or an array of objects.  Each property in the objects is displayed recursively.
+
+**params**
+*data* *Array|Object*, Data to display
+
+**returns**
+*Logger*, Reference to the logger object
+
+**example**
+```javascript
+  var Logger = require('agr-logger');
+  var logger = Logger();
+  var x = 1, y = 10, obj = {some: 'data'};
+
+  logger.on();
+  
+  logger.val({x:x,y:y});
+  logger.val(obj);
+  logger.val([{x:x, y:y}, obj);
+```
+
+#### agr-logger.err(ex)
+
+Logs the exception message if the ex value is a string.  If it is an error 
+object it extracts the relevant information and logs it using the output method.
+
+**params**
+*ex* *String|Error*, Error to log
+
+**returns** 
+*Logger*, Reference to the logger object
+
+### Properties and Defaults
 
 ## Examples
 
@@ -90,9 +111,8 @@ By default logging is turned OFF and the expected environment is set to PROD.
 To turn on all logging the output.on property must be set to TRUE when 
 instatiating the logger, or, the .on() method must be called explicitly.
 
-Examples
---------
-```
+**Examples**
+```javascript
   var Logger = require('agr-logger');
   var log = new Logger({
     module: {
@@ -116,10 +136,10 @@ Examples
 ```
 
 #### Turn logging calls On/Off
-Changing the verbosity of the logging output means chaging which method calls
-actually get output when called.  For example, in production we may want to only
-log errors, so, only calls to the .err or .exception functions should be 
-outpu.  Any .log, .msg, or .val calls should not be logged.
+Changing the verbosity of the logging output means chaging which log methods
+actually get logged.  For example, in production we may want to log
+errors, so only calls to the .err or .exception functions should be sent to our
+output method.  Any .log, .msg, or .val calls should not be logged.
 
 To change the verbosity we must defined the environment in module.environments 
 for which we want to specify non-default behavior.  Then we can turn each 
