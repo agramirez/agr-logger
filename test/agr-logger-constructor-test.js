@@ -10,7 +10,7 @@ exports.constructor = {
     done();
   },
   'no args': function(test) {
-    var data, actual, expeted;
+    var data, actual, expected;
 
     data = null;
     actual = 'object';
