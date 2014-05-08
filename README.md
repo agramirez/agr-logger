@@ -272,39 +272,52 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
 
-**[May 16, 2014]** _v0.1.0_: 
+Releases follow the convention [major].[minor].[bugfix]
+
+Where a MAJOR release exemplifies a stable, unit tested, and generally bug free
+code base.
+
+The MINOR release indicates a new piece of functionality spanning one or more
+related functions or changes.  Generally speaking each minor release always 
+indicates a single set of functional changes.
+
+As the name implies the BUGFIX is updated when a single bug is found and fixed.
+
+All releases are published to npm after being tested and committed to git.
+
+**[May 16, 2014]** _v1.0.0_: 
 
 First beta release with completed and tested functional spec
 
-**[May 16, 2014]** _v0.0.8_: 
+**[May 16, 2014]** _v0.8.0_: 
 
 Implementation of agr-logger.environment functionality
 
-**[May 15, 2014]** _v0.0.7_: 
+**[May 15, 2014]** _v0.7.0_: 
 
 Implementation of agr-logger.format functionality 
 
-**[May 14, 2014]** _v0.0.6_: 
+**[May 14, 2014]** _v0.6.0_: 
 
 Implementation of agr-logger.module functionality
 
-**[May 13, 2014]** _v0.0.5_: 
+**[May 13, 2014]** _v0.5.0_: 
 
 Implementation of agr-logger.func method
 
-**[May 12, 2014]** _v0.0.4_: 
+**[May 12, 2014]** _v0.4.0_: 
 
 Implementation of agr-logger.start and agr-logger.end method
 
-**[May 11, 2014]** _v0.0.3_: 
+**[May 11, 2014]** _v0.3.0_: 
 
 Implementation of agr-logger.val method
 
-**[May 10, 2014]** _v0.0.2_: 
+**[May 10, 2014]** _v0.2.0_: 
 
 Implementation of agr-logger.msg method
 
-**[May 9, 2014]** _v0.0.1_: 
+**[May 9, 2014]** _v0.1.0_: 
 
 Initial release, contains tested logger module with single function (agr-logger.log)
 
