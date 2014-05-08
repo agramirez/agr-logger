@@ -271,15 +271,42 @@ See xxx and xxx for more details.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-[May 16, 2014] _v0.1.0_: first beta release with completed and tested functional spec
-[May 16, 2014] _v0.0.8_: implementation of agr-logger.environment functionality
-[May 15, 2014] _v0.0.7_: implementation of agr-logger.format functionality 
-[May 14, 2014] _v0.0.6_: implementation of agr-logger.module functionality
-[May 13, 2014] _v0.0.5_: implementation of agr-logger.func method
-[May 12, 2014] _v0.0.4_: implementation of agr-logger.start and agr-logger.end method
-[May 11, 2014] _v0.0.3_: implementation of agr-logger.val method
-[May 10, 2014] _v0.0.2_: implementation of agr-logger.msg method
-[May 9, 2014] _v0.0.1_: initial release, contains tested logger module with single function (agr-logger.log)
+
+**[May 16, 2014]** _v0.1.0_: 
+
+First beta release with completed and tested functional spec
+
+**[May 16, 2014]** _v0.0.8_: 
+
+Implementation of agr-logger.environment functionality
+
+**[May 15, 2014]** _v0.0.7_: 
+
+Implementation of agr-logger.format functionality 
+
+**[May 14, 2014]** _v0.0.6_: 
+
+Implementation of agr-logger.module functionality
+
+**[May 13, 2014]** _v0.0.5_: 
+
+Implementation of agr-logger.func method
+
+**[May 12, 2014]** _v0.0.4_: 
+
+Implementation of agr-logger.start and agr-logger.end method
+
+**[May 11, 2014]** _v0.0.3_: 
+
+Implementation of agr-logger.val method
+
+**[May 10, 2014]** _v0.0.2_: 
+
+Implementation of agr-logger.msg method
+
+**[May 9, 2014]** _v0.0.1_: 
+
+Initial release, contains tested logger module with single function (agr-logger.log)
 
 ## License
 Copyright (c) 2014 Alexander G. Ramirez  
