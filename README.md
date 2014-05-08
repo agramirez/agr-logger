@@ -162,7 +162,7 @@ module.verbosity object.
 
 Examples
 --------
-```
+```javascript
   var Logger = require('agr-logger');
   var log = Logger({
     module: {
@@ -221,7 +221,7 @@ be passed as a parameter to all custom method calls that can be defined.
 
 Example
 -------
-```
+```javascript
   var Logger = require('agr-logger');
   var fs = require('fs');
 
