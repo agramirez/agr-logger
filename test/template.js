@@ -3,7 +3,7 @@
 
 var helpers = require('../lib/agr-logger-helpers.js').internal;
 
-exports.constructor = {
+exports.FunctionName = {
   setUp: function(done) {
     done();
   },
@@ -73,7 +73,7 @@ exports.constructor = {
     test.equal(actual, expected, 'should work without any problems');
     test.done();
   },
-  'single boolan args': function(test) {
+  'single boolean args': function(test) {
     var data, actual, expected;
 
     data = true;
